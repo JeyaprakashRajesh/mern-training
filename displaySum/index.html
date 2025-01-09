@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+    <script>
+        function calculateSum() {
+            var sum = parseFloat(document.getElementsByTagName("h1")[0].innerHTML);
+            sum += parseFloat(document.getElementsByTagName("input")[0].value);
+            document.getElementsByTagName("h1")[0].innerHTML = sum;
+        }
+        function reset() {
+            document.getElementsByTagName("h1")[0].innerHTML = 0;
+        }
+    </script>
+</head>
+<body>
+    <input type="number">
+    <button onclick="calculateSum()">add</button>
+    <button onclick="reset()">reset</button>
+    <h1>0</h1>
+</body>
+</html>

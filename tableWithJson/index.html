@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table with JSON</title>
+    <script>
+      var tableData = [
+        { rollNo: 1, name: "person 1" },
+        { rollNo: 2, name: "person 2" },
+        { rollNo: 3, name: "person 3" },
+        { rollNo: 4, name: "person 4" },
+      ];
+
+      // Populate the table dynamically
+      document.addEventListener("DOMContentLoaded", function () {
+        const rollNoCells = document.getElementsByClassName("1");
+        const nameCells = document.getElementsByClassName("2");
+
+        for (let i = 0; i < tableData.length; i++) {
+          rollNoCells[i].innerHTML = tableData[i].rollNo;
+          nameCells[i].innerHTML = tableData[i].name;
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <table border="1">
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+        </tr>
+        <tr>
+          <td class="1"></td>
+          <td class="2"></td>
+        </tr>
+        <tr>
+          <td class="1"></td>
+          <td class="2"></td>
+        </tr>
+        <tr>
+          <td class="1"></td>
+          <td class="2"></td>
+        </tr>
+        <tr>
+          <td class="1"></td>
+          <td class="2"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
