@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.container{
+    display: grid;
+    background-color: white;
+    width: 50vw;
+    height: 40vh;
+    gap: 20px;
+    padding: 10px;
+    border: 5px solid black;
+    border-radius: 10px;    
+    grid-template-areas: 
+        "one two two three"
+        "one four five six"
+    ;
+}
+@keyframes one-animation {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(+20px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes two-animation {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(+20px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes four-five-animation {
+    from {
+        transform: translateY(+100px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(-20px);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes three-animation {
+    from {
+        transform: translate(100px, -100px);
+        opacity: 0;
+    }
+    80% {
+        transform: translate(-20px , +20px);
+        opacity: 0.8;
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+@keyframes six-animation {
+    from {
+        transform: translate(100px, 100px);
+        opacity: 0;
+    }
+    80% {
+        transform: translate(-20px , -20px);
+        opacity: 0.8;
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+.container div{
+    background-color: rgb(136, 199, 255);
+    border: 5px blue solid;
+    align-content: center;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 2vw;
+}
+.one {
+    grid-area: one;
+    animation: one-animation 0.3s ease-in-out;
+}
+.two {
+    grid-area: two;
+    animation: two-animation 0.3s ease-in-out;
+}
+.three {
+    grid-area: three;
+    animation: three-animation 0.3s ease-in-out;
+}
+.four {
+    grid-area: four;
+    animation: four-five-animation 0.3s ease-in-out;
+}
+.five {
+    grid-area: five;
+    animation: four-five-animation 0.3s ease-in-out;
+}
+.six {
+    grid-area: six;
+    animation: six-animation 0.3s ease-in-out;
+}
+
+@media screen and (max-width : 600px) {
+    body {
+    }
+    .container {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .container div {
+        height: 16%;
+    }
+}
