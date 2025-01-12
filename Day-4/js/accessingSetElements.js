@@ -16,3 +16,9 @@ var b = [{
 b.forEach((person) => {
     console.log(person.name,person.class)
 })
+
+for(let i of b) {
+    for(j in Object.values(i)) {
+        console.log(j)
+    }
+}
