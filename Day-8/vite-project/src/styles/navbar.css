@@ -1,0 +1,20 @@
+.navbar-container {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.navbar-element {
+    padding: 1%;
+    font-size: 1.5vw;
+    transition: all 0.3s ease;
+    color: rgb(255, 178, 63);
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 0px 0px 10px orange;
+}
+.navbar-element:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
