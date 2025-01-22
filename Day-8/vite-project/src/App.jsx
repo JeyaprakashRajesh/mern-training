@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import About from './Components/About'
 import AuthScreen from './Components/AuthScreen'
@@ -6,13 +7,15 @@ import Gallary from './Components/Gallary'
 import Home from './Components/Home'
 import Navbar from './Components/Navbar'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import UseState from './Components/Hooks/UseState'
+import UseEffect from './Components/Hooks/UseEffect'
+import UseEffectAPI from './Components/Hooks/UseEffectApi'
+
 
 function App() {
   const location = useLocation();
-
   return (
     <>
-      {/* Conditionally render Navbar */}
       {location.pathname !== '/auth' && <Navbar />}
       <Routes>
         <Route path='/' Component={Home} />
@@ -20,6 +23,9 @@ function App() {
         <Route path='/gallery' Component={Gallary} />
         <Route path='/contact' Component={Contact} />
         <Route path='/auth' Component={AuthScreen} />
+        <Route path='/usestate' Component={UseState} />
+        <Route path='/useeffect' Component={UseEffect} />
+        <Route path='/useeffectapi' Component={UseEffectAPI} />
       </Routes>
     </>
   );
