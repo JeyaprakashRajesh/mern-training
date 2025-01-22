@@ -1,0 +1,93 @@
+.auth-screen-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.auth-screen-selector-container {
+    height: 8%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.auth-screen-selector-element {
+    height: 100%;
+    width: 45%;
+}
+.auth-screen-selector-element button {
+    height: inherit;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: orange;
+    align-content: center;
+    text-align: center;    
+    border: none;
+    border-radius: 15px;
+    color: black;
+    font-size: 1.2vw;
+    font-weight: 700;
+    box-shadow: 0px 0px 10px rgba(255, 166, 0, 0.795);
+    transition: all 0.2s ease;
+}
+.auth-screen-selector-element button:hover  {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.auth-screen-selector-line {
+    height: 100%;
+    width: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+.auth-screen-component {
+    width: 30%;
+    height: 55%;
+    background-color: #222;
+    margin-top: 3%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.auth-screen-heading {
+   width: 100%;
+   height: 15%;
+   align-content: center;
+   text-align: center;
+    font-size: 2vw;
+}
+.auth-screen-component-element {
+    height: 13%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth-screen-component-element  input {
+    height: 100%;
+    width: 74%;
+    border: none;
+    border-radius: 10px;
+    background-color: #333;
+    border: gray solid 1px;
+    padding-left: 4%;
+    color: white;
+}
+.auth-screen-component-element button {
+    height: 100%;
+    width: 78%;
+    border: 1px orange solid;
+    background-color: orange;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+.auth-screen-component-element button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px orange;
+}
