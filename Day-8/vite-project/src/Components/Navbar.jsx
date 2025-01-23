@@ -54,6 +54,12 @@ export default function Navbar() {
                 <li>
                   <Link to="/usereducer">UseReducer</Link>
                 </li>
+                <li>
+                  <Link to="/usememo">UseMemo</Link>
+                </li>
+                <li>
+                  <Link to="/useref">UseRef</Link>
+                </li>
               </ul>
             </div>
           ) : null}

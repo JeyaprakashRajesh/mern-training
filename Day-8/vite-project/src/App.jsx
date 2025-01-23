@@ -12,6 +12,8 @@ import UseEffect from './Components/Hooks/UseEffect'
 import UseEffectAPI from './Components/Hooks/UseEffectApi'
 import UseEffectAPIimage from './Components/Hooks/UseEffectApiImage'
 import UseReducer from './Components/Hooks/UseReducer'
+import UseMemo from './Components/Hooks/UseMemo'
+import UseRef from './Components/Hooks/UseRef'
 
 function App() {
   const location = useLocation();
@@ -29,6 +31,8 @@ function App() {
         <Route path='/useeffectapi' Component={UseEffectAPI} />
         <Route path="/useeffectapiimage" Component={UseEffectAPIimage} />
         <Route path='/usereducer' Component={UseReducer} />
+        <Route path='/usememo' Component={UseMemo} />
+        <Route path='/useref' Component={UseRef} />
       </Routes>
     </>
   );
