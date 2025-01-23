@@ -10,7 +10,8 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import UseState from './Components/Hooks/UseState'
 import UseEffect from './Components/Hooks/UseEffect'
 import UseEffectAPI from './Components/Hooks/UseEffectApi'
-
+import UseEffectAPIimage from './Components/Hooks/UseEffectApiImage'
+import UseReducer from './Components/Hooks/UseReducer'
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,8 @@ function App() {
         <Route path='/usestate' Component={UseState} />
         <Route path='/useeffect' Component={UseEffect} />
         <Route path='/useeffectapi' Component={UseEffectAPI} />
+        <Route path="/useeffectapiimage" Component={UseEffectAPIimage} />
+        <Route path='/usereducer' Component={UseReducer} />
       </Routes>
     </>
   );

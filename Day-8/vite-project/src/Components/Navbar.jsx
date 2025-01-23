@@ -48,6 +48,12 @@ export default function Navbar() {
                 <li>
                   <Link to="/useeffectapi">UseEffect Api</Link>
                 </li>
+                <li>
+                  <Link to="/useeffectapiimage">UseEffect Api Image</Link>
+                </li>
+                <li>
+                  <Link to="/usereducer">UseReducer</Link>
+                </li>
               </ul>
             </div>
           ) : null}
