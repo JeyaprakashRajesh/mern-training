@@ -60,6 +60,9 @@ export default function Navbar() {
                 <li>
                   <Link to="/useref">UseRef</Link>
                 </li>
+                <li>
+                  <Link to="/usecallback">UseCallback</Link>
+                </li>
               </ul>
             </div>
           ) : null}
