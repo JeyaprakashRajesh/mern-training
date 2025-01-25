@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function Navbar() {
   const [isDropDown, setDropDown] = useState(false);
   const [isHooksDropDown, setHooksDropDown] = useState(false);
+  const [isMemoDropDown , setMemoDropDown] = useState(false)
   return (
     <section>
       <section className="navbar-container">
@@ -34,6 +35,16 @@ export default function Navbar() {
             </div>
           ) : null}
         </Link>
+        <div className="navbar-element" onMouseLeave={() => setMemoDropDown(false)} onMouseEnter={() => setMemoDropDown(true)}>
+          Memoization 
+          {isMemoDropDown ? 
+            <div className="navbar-dropdown-container">
+              <ul>
+                <li><Link to="/memo">Memo</Link></li>
+              </ul>
+            </div>  : null
+        }
+        </div>
         <div className="navbar-element" onMouseLeave={() => setHooksDropDown(false)} onMouseEnter={() => setHooksDropDown(true)}>
           Hooks
           {isHooksDropDown ? (

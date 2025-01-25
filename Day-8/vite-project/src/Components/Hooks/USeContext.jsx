@@ -1,4 +1,4 @@
-import Invigilator from "../Context_Comp/Invigilator"
+import Invigilator from "../Context/Invigilator"
 import { createContext } from "react"
 export const ThemeProvider = createContext()
 const UseContext = () => {

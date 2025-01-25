@@ -1,4 +1,4 @@
-import Exam_Result from "./Exam_Result"
+import Exam_Result from "./ExamResult"
 const CoE = () => {
     return (
         <div>
