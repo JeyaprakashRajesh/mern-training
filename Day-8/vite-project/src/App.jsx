@@ -15,7 +15,7 @@ import UseReducer from './Components/Hooks/UseReducer'
 import UseMemo from './Components/Hooks/UseMemo'
 import UseRef from './Components/Hooks/UseRef'
 import UseCallback from './Components/Hooks/useCallback'
-
+import ReactLifecycleMethods from './components/ReactLifeCycleMethods';
 function App() {
   const location = useLocation();
   return (
@@ -35,6 +35,7 @@ function App() {
         <Route path='/usememo' Component={UseMemo} />
         <Route path='/useref' Component={UseRef} />
         <Route path='/usecallback' Component={UseCallback} />
+        <Route path='/reactlifecycle' element={<ReactLifecycleMethods />} />
       </Routes>
     </>
   );

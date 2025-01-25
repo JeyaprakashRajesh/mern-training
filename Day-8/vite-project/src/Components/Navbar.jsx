@@ -63,6 +63,7 @@ export default function Navbar() {
                 <li>
                   <Link to="/usecallback">UseCallback</Link>
                 </li>
+                <li><Link to="/reactlifecycle" className='link'>Reactlifecycle</Link></li>
               </ul>
             </div>
           ) : null}
