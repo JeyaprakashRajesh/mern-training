@@ -18,7 +18,9 @@ import UseCallback from './Components/Hooks/useCallback'
 import ReactLifecycleMethods from './Components/ReactLifeCycleMethods';
 import UseContext from './Components/Hooks/USeContext'
 import Memo from './Components/Memoization/Memo'
-
+import Storage from "./Components/Hooks/Custom_Hook/Sample"
+import Usecust from "./Components/Hooks/Custom_Hook/UseLocalStorage"
+import HoC from './Components/Hoc/HoC'
 
 
 function App() {
@@ -43,6 +45,9 @@ function App() {
         <Route path='/reactlifecycle' element={<ReactLifecycleMethods />} />
         <Route path='/usecontext' Component={UseContext} />
         <Route path='/memo' Component={Memo} />
+        <Route path="/storage" Component={Storage} />
+        <Route path='/usecust' Component={Usecust} />
+        <Route path="/hoc" Component={HoC} />
       </Routes>
     </>
   );

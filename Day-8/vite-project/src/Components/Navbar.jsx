@@ -76,6 +76,8 @@ export default function Navbar() {
                 </li>
                 <li><Link to="/reactlifecycle" className='link'>Reactlifecycle</Link></li>
                 <li><Link to="/usecontext" className='link'>usecontext</Link></li>
+                <li><Link to="/storage" className='link'>Storage</Link></li>
+                <li><Link to="/usecust" className='link'>cust-hook</Link></li>
               </ul>
             </div>
           ) : null}
