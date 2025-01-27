@@ -21,7 +21,7 @@ import Memo from './Components/Memoization/Memo'
 import Storage from "./Components/Hooks/Custom_Hook/Sample"
 import Usecust from "./Components/Hooks/Custom_Hook/UseLocalStorage"
 import HoC from './Components/Hoc/HoC'
-
+import DarkModeToggle from './Components/Hooks/Custom_Hook/DarkModeToggle'
 
 function App() {
   const location = useLocation();
@@ -48,6 +48,8 @@ function App() {
         <Route path="/storage" Component={Storage} />
         <Route path='/usecust' Component={Usecust} />
         <Route path="/hoc" Component={HoC} />
+        <Route path='/darkmode' Component={DarkModeToggle} />
+
       </Routes>
     </>
   );
