@@ -18,6 +18,7 @@ export default function AuthScreen(props) {
       })
       .then((res) => {
         console.log("Res" , res)
+        setLogin(true)
       })
     }catch(err) {
       console.log("error sending req" , err)
