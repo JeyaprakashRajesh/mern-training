@@ -3,11 +3,15 @@ const path=require('path');
 const mdb=require('mongoose');
 const dotenv=require('dotenv');
 const Signup=('./models/signupSchema.js')
+const bcrypt =require('bcrypt');
+const cors =require('cors');
+
 const app=express();
 dotenv.config();
 app.use(express.json());
+app.use(cors())
 mdb
-  .connect(process.env.MONGODB_URL)
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("conntected");
   })
@@ -20,15 +24,16 @@ app.get("/static", (req, res) => {
 app.get("/", (req, res) => {
   res.send("Welcome to backend my friend...\n this is backend process area");
 });
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
   var { firstname, lastname, email, password } = req.body;
+  var hashedpassword= await bcrypt.hash(password,10)
   console.log(req.body);
   try {
     const newCustomer = new Signup({
       firstname: firstname,
       lastname: lastname,
       email: email,
-      password: password,
+      password: hashedpassword,
     });
     newCustomer.save();
     console.log(newCustomer);
@@ -49,13 +54,42 @@ app.post("/login", async (req, res) => {
       if (!user) {
         return res.status(404).send("User not found!");
       }
-      if (user.password !== password) {
+      if (await bcrypt.compare(password, user.password)) {
         return res.status(401).send("Invalid credentials!");
       }
       res.status(200).send("Login successful!");
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).send("Error during login");
+    }
+  });
+
+  app.put('/updateuser', async (req, res) => {
+    const { id, ...updates } = req.body; 
+  
+    try {
+      const updatedUser = await Signup.findByIdAndUpdate(id, updates, { new: true });
+      if (!updatedUser) {
+        return res.status(404).send("User not found");
+      }
+      res.status(200).send("User details updated successfully");
+    } catch (err) {
+      res.status(500).send("Error updating user details");
+    }
+  });
+  
+  
+  app.delete('/deleteuser', async (req, res) => {
+    const { id } = req.body; 
+  
+    try {
+      const deletedUser = await Signup.findByIdAndDelete(id);
+      if (!deletedUser) {
+        return res.status(404).send("User not found");
+      }
+      res.status(200).send("User deleted successfully");
+    } catch (err) {
+      res.status(500).send("Error deleting user");
     }
   });
 app.listen(3001,()=>{
