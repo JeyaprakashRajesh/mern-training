@@ -6,6 +6,7 @@ export default function Navbar() {
   const [isDropDown, setDropDown] = useState(false);
   const [isHooksDropDown, setHooksDropDown] = useState(false);
   const [isMemoDropDown , setMemoDropDown] = useState(false)
+  
   return (
     <section>
       <section className="navbar-container">

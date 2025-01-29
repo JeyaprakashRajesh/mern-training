@@ -24,16 +24,17 @@ import HoC from './Components/Hoc/HoC'
 import DarkModeToggle from './Components/Hooks/Custom_Hook/DarkModeToggle'
 
 function App() {
+  const [isLoggedIn , setLoggedIn] = useState(false)
   const location = useLocation();
   return (
     <>
-      {location.pathname !== '/auth' && <Navbar />}
+      {location.pathname !== '/auth' && <Navbar  />}
       <Routes>
         <Route path='/' Component={Home} />
         <Route path='/about' Component={About} />
         <Route path='/gallery' Component={Gallary} />
         <Route path='/contact' Component={Contact} />
-        <Route path='/auth' Component={AuthScreen} />
+        <Route path='/auth' element={<AuthScreen isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn} />} />
         <Route path='/usestate' Component={UseState} />
         <Route path='/useeffect' Component={UseEffect} />
         <Route path='/useeffectapi' Component={UseEffectAPI} />
@@ -49,7 +50,7 @@ function App() {
         <Route path='/usecust' Component={Usecust} />
         <Route path="/hoc" Component={HoC} />
         <Route path='/darkmode' Component={DarkModeToggle} />
-
+        
       </Routes>
     </>
   );

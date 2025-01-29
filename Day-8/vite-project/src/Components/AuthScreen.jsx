@@ -1,9 +1,28 @@
 import React, { useState } from "react";
 import "../styles/AuthScreen.css";
 import { useNavigate } from "react-router-dom";
-export default function AuthScreen() {
+import axios from "axios";
+export default function AuthScreen(props) {
   const [isLogin, setLogin] = useState(false);
   const navigate = useNavigate()
+  const [username , setusername] = useState("")
+  const [password , setPassword] = useState("") 
+  const [email , setEmail] = useState("") 
+
+  const handlesignup = (e) => {
+    try {
+      axios.post("http://localhost:3001/signup" , {
+          username : username,
+          password : password,
+          email : email
+      })
+      .then((res) => {
+        console.log("Res" , res)
+      })
+    }catch(err) {
+      console.log("error sending req" , err)
+    }
+  }
   return (
     <div>
       <section className="auth-screen-container">
@@ -30,10 +49,10 @@ export default function AuthScreen() {
             </div>
           </form>
         ) : (
-            <form className="auth-screen-component">
+            <form className="auth-screen-component" onSubmit={(e) => handlesignup(e)}>
             <div className="auth-screen-heading">SIGNUP</div>
             <div className="auth-screen-component-element">
-                <input type="text" placeholder="UserName" required></input>
+                <input type="text" placeholder="UserName" required value={username} onChange={(e) => setusername(e.target.value)}></input>
             </div>
             <div className="auth-screen-component-element">
                 <input type="email" placeholder="email" required></input>
